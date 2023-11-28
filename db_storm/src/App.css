@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500i,600,900i');
+
+body{
+
+  font-family: Montserrat;
+  height: 100%;
+
+}
+
+/* Header */
+
+.Header{
+
+  width: 95%;
+  margin: 0 auto;
+
+}
+
+
+/* sup-header*/
+
+.sup-header{
+
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+  width: 100%;
+  height: 80px;
+}
+
+a{
+
+  color: black;
+  text-decoration: none;
+
+}
+
+.white-space{
+
+  width: 450px;
+
+}
+
+.logo{
+
+  font-size: 1.5em;
+  color: black;
+  text-decoration: none;
+
+}
+
+/* Bottom-header */
+
+.bottom-header{
+
+  border: 1px black solid;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(37, 36, 36);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 7px;
+
+}
+
+.rotas-header{
+
+  color: white;
+  display: flex;
+
+}
+
+.rotas-header div{
+
+  box-shadow: black 2px 0 2px;
+  flex-grow: 1;
+  padding: 0 40px;
+  cursor: pointer;
+
+}
+
+.input-div-header{
+
+  margin-right: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.input-div-header input{
+
+  width: 300px;
+  height: 50%;
+  outline: 0;
+
+}
+
+/* Corpo da página */
+
+.Body{
+
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
+
+}
+
+.primeira-metade-body{
+
+  display: flex;
+  gap: 1%;
+
+}
+
+/* SideBar */
+
+.SideBar{
+
+  border: 1px #e6e3e3 solid;
+  width: 30%;
+  height: fit-content;
+
+}
+
+.categorias-titulo{
+  height: 40px;
+  background-color: rgb(148, 8, 8);
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+}
+
+.categorias-titulo p{
+
+  margin-left: 5px;
+
+}
+
+.categorias p{
+
+  font-size: 0.8em;
+  font-weight: 400;
+  margin: 0;
+  padding: 8px 12px;
+
+}
+
+.categorias div{
+
+  display: flex;
+  align-items: center;
+  border-bottom: 1px #f5f5f5 solid;
+  cursor: pointer;
+
+}
+
+.categorias div{
+
+  margin-left: 20px;
+
+}
+
+.categorias div p{
+
+  margin-left: -5px;
+
+}
+
+/* Banner */
+
+.banner{
+
+  border: 1px #e6e3e3 solid;
+  width: 69%;
+  display: flex;
+  flex-grow: 1;
+  height: 392px;
+
+}
+
+.banner div{
+
+  width: 50%;
+
+}
+
+.banner-titulo{
+
+  color:  rgb(148, 8, 8);
+  font-size: 3em;
+  margin-left: 25px;
+  font-weight: 700;
+
+}
+
+.banner-subtitulo{
+
+  margin-top: -20px;
+  margin-left: 25px;
+  font-size: 1.5em;
+  color: rgb(102, 99, 99);
+
+}
+
+.banner button{
+
+  background-color: rgb(148, 8, 8);
+  border: none;
+  padding: 10px 8px;
+  margin-left: 25px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+
+}
+
+.foto-banner{
+
+  width: 400px;
+  height: 350px;
+
+}
+
+.banner-callToAction{
+
+  margin-left: 25px;
+
+
+}
+
+/* Produtos */
+
+.titulo-produtos{
+
+  margin-left: 25px;
+
+}
+
+.segunda-metade-body{
+
+  margin-top: 20px;
+
+}
+
+.produtos{
+
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+.fila-1, .fila-2, .fila-3{
+
+  width: 100%;
+  height: 350px;
+  display: flex;
+  gap: 1%;
+
+}
+
+.card{
+
+  height: 300px;
+  width: 24%;
+
+}
+
+.card div{
+
+  height: 50%;
+  border: 1px #e6e3e3 solid;
+
+}
+
+.titulo-card{
+
+  margin-left: 10px;
+  font-weight: 400;
+
+}
+
+.descricao-card{
+
+  font-size: 0.8em;
+  color: rgb(102, 99, 99);
+  margin-left: 10px;
+  border-top: none;
+
+}
+
+.button-card{
+
+  border-radius: 3px;
+  width: 80px;
+  height: 25px;
+  margin-left: 10px;
+  background-color: rgb(148, 8, 8);
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+.card-imagem{
+
+  border-bottom: none !important;
+
+}
+
+.card-imagem img{
+
+  width: 230px;
+  height: 230px;
+  position: relative;
+  bottom: 30px;
+  left: 38px;
+  cursor: pointer;
+
+}
+
+.revelar-produtos{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.revelar-produtos button{
+
+  background-color: rgb(148, 8, 8);;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+
+}
+
+/* Footer */
+
+.Footer{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  position: relative;
+  bottom: 0px;
+  margin-top: 50px;
+
+}
+
+
+
+
+
