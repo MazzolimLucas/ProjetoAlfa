@@ -1,0 +1,105 @@
+/* Página geral */
+
+.Contato{
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* Apresentação página */
+
+.titulo-contato{
+    font-weight: 300;
+    margin: 40px 0;
+    font-size: 3em;
+}
+
+.instrucao-uso-contato{
+    font-weight: 600;
+    margin-right: 11em;
+    font-size: 1.4em;
+}
+
+.campos-obrigatorios-contato{
+
+    margin-top: 30px;
+    margin-right: 45em;
+    font-size: 0.9em;
+
+}
+
+/* Forms */
+
+.input-contato{
+    border: none;
+    outline: none;
+    border-bottom: 1px rgb(121, 119, 119) solid;
+    height: 30px;
+    margin-top: 30px;
+    margin-right: 30px;
+    width: 60%;
+    font-size: 1em;
+    color: rgb(49, 47, 47);
+}
+
+.input-opcoes-contato{
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(121, 119, 119);
+}
+
+.input-opcoes-black-contato{
+    background-color: transparent; 
+    color: black;
+}
+
+.input-contato:focus:visited{
+    color: black;
+}
+
+.input-opcoes-contato option{
+    color: black;
+    cursor: pointer;
+}
+
+.input-contato:focus::placeholder{
+    color: transparent;
+}
+
+.checar-requesitos-contato, .checar-politicas-contato{
+    display: block;
+    width: 50px;
+    height: 14px;
+    margin-top: 30px;
+    margin-left: 230px;
+    cursor: pointer;
+}
+
+.checar-politicas-contato{
+    margin-top: 10px;
+}
+
+.aceitar-informacoes-contato, .aceitar-politicas-contato{
+    height: 28px;
+    position: relative;
+    bottom: 20px;
+    right: 100px;
+    cursor: pointer;
+}
+
+.aceitar-politicas-contato{
+    margin-right: 210px;
+}
+
+.aceitar-informacoes-contato{
+    margin-right: 70px;
+}
+
+.submit-contato{
+    display: block;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}

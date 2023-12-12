@@ -1,30 +1,45 @@
-import React from "react";
+import './Home.css'
 import SideBar from "./SideBar";
-import ComputadorGamer from '../img/ComputadorGamer.png'
-import tvSony from '../img/tvSony.png';
+import Button from '../../Assents/Button';
+import ComputadorGamer from '../../img/ComputadorGamer.png'
+import tvSony from '../../img/tvSony.png';
 
 export default function Body(){
 
     return(
         <div className="Body">
-            <div className="primeira-metade-body">
+            {supBody()}
+            {infBody()}
+        </div>
+    );
+}
+
+function supBody(){
+    return(
+        <div className="primeira-metade-body">
                 <SideBar/>
                 <div className="banner">
                     <div className="anuncio-banner">
                         <p className="banner-titulo">SUPER PROMOÇÃO</p>
                         <p className="banner-subtitulo">40% de desconto</p>
                         <p className="banner-callToAction">Compre agora para obter as melhores ofertas</p>
-                        <button>Compre Agora</button>
+                        <Button titulo={"Compre Agora"} className={'banner-button'} />
                     </div>
                     <div>
                         <img src={ComputadorGamer} className="foto-banner"/>
                     </div>
                 </div>
             </div>
-            <div className="segunda-metade-body">
+    );
+}
+
+function infBody(){
+
+    return(
+        <div className="segunda-metade-body">
                 <h3 className="titulo-produtos">NOVOS PRODUTOS</h3>
                 <div className="produtos">
-                    <div className="fila-1">
+                    <div className="fila">
                         <div className="card">
                                 <div className="card-imagem">
                                     <img src={tvSony} />
@@ -71,7 +86,7 @@ export default function Body(){
                         </div>
                     </div>
 
-                    <div className="fila-2">
+                    <div className="fila">
                         <div className="card">
                                 <div className="card-imagem">
                                     <img src={tvSony} />
@@ -118,7 +133,7 @@ export default function Body(){
                         </div>
                     </div>
 
-                    <div className="fila-3">
+                    <div className="fila">
                         <div className="card">
                                 <div className="card-imagem">
                                     <img src={tvSony} />
@@ -165,11 +180,8 @@ export default function Body(){
                         </div>
                     </div> 
                 </div>
-
-                <div className="revelar-produtos"><button>SAIBA MAIS</button></div>
-
+                <div className="revelar-produtos"><Button titulo={'SAIBA MAIS'}></Button></div>
             </div>
-        </div>
-    )
-}
+    );
 
+}
