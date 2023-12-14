@@ -1,162 +1,102 @@
-import {animate, inView, motion, useInView, useMotionValue, useTransform} from 'framer-motion'; 
-import { useEffect, useRef } from 'react';
-import "./Sobre.css";
-import reuniaoFoto from "../../img/AmbienteDBstorm.jpg";
-import historiaFoto from "../../img/HistoriaDBstorm.jpg";
-import criadorFoto from "../../img/CriadorDBstorm.jpg";
+import {useState, useEffect, useRef} from 'react';
+import {motion} from 'framer-motion'
+import './Sobre.css';
 
+const cards = [
+  {
+    foto: 'https://dummyimage.com/300x300',
+    titulo: 'Uma ideia inovadora',
+    texto: "consectetur adipiscing elit, sed do magna aliqua m ipsum dolor sit amet, consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua",
+    ano: 1994,
+    mes: 'Novembro'
+  },
+  {
+    foto: 'https://dummyimage.com/300x300',
+    titulo: 'Uma ideia inovadora',
+    texto: "consectetur adipiscing elit, sed do magna aliqua m ipsum dolor sit amet, consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua",
+    ano: 2006,
+    mes: 'Setembro'
+  },
+  {
+    foto: 'https://dummyimage.com/300x300',
+    titulo: 'Uma ideia inovadora',
+    texto: "consectetur adipiscing elit, sed do magna aliqua m ipsum dolor sit amet, consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua",
+    ano: 2010,
+    mes: 'Outubro'
+  },
+  {
+    foto: 'https://dummyimage.com/300x300',
+    titulo: 'Uma ideia inovadora',
+    texto: "consectetur adipiscing elit, sed do magna aliqua m ipsum dolor sit amet, consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua consectetur adipiscing elit, sed do magna aliqua",
+    ano: 2014,
+    mes: 'Dezembro'
+  }
+]
 
-export default function Index(){
+export default function App(){
 
-    const referencia = useRef(null);
-    const view = useInView(referencia, {once: true});
+  const innerSlide = useRef();
+  const [width, setWidth] = useState(0);
 
-    const Contador = ({start, end, className}) => {
-        const ref = useRef();
+  useEffect(() => {
+    setWidth(innerSlide.current.offsetWidth - window.outerWidth + 550); // Quanto o slide poder deslizar para a direita.
+  }, []);
 
-        useEffect(() => {
-            const valorAtual = ref.current;
+  return(
+    <div className='Sobre'>
+        <h1 className='titulo-sobre'>A inovação mora aqui</h1>
+        <p className='apresentacao-sobre'>{cards[0].texto}</p>
+        <h2 className='titulo-slider-sobre'>Uma breve história da <br/> DB Storm</h2>
 
-            if(view){
-            console.log(referencia);
-            animate(start, end , {
-                duration: 1.75,
-                onUpdate(latest) {
-                    valorAtual.textContent = Math.round(latest);
-                },
-                ease: 'linear'
-            })}
-        }, []);
-
-        return(
-            <span ref={ref} className={className}>{ref.current}</span>
-        );
-    };
-
-    return(
-        <div className="Sobre">
-            <h1 className="titulo-sobre">Sobre nós</h1>
-
-            <AnimacaoFadeInX direita={true}>
-            <div className="banner-sobre-1 banner-sobre">
-                <div className="texto-sobre">
-                    <h1>Propósito</h1>
-                    <p className="texto-principal-banner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est leo, venenatis at urna ut, gravida tincidu
-                        nt ligula. Nullam eget justo at lorem pulvinar vestibulum quis non diam. Duis magna dui, tempus ut nisl et, 
-                        molestie pulvinar libero. Aenean vel venenatis lorem. Mauris at scelerisque ligula. Nam accumsan est nulla, 
-                        in lobortis eros porttitor a. Aenean commodo vehicula scelerisque. Aliquam hendrerit tortor at ornare faucib
-                        us. Nullam ornare, augue vel tincidunt posuere, metus purus elementum nunc, sed venenatis metus sapien sit 
-                        amet dui. Ut eget sapien eu turpis euismod tempus. Donec ac diam lorem. Mauris nec faucibus mi. Nullam ornar
-                        e efficitur elit non sagittis. Nunc tristique congue nunc sed tincidunt.</p>
-                </div>
-                <div className="foto-sobre"><img src={reuniaoFoto}/></div>
-            </div>
-            </AnimacaoFadeInX>
-
-
-            <AnimacaoFadeInY baixo={false}>
-            <div className="dados-container-sobre" ref={referencia}>
-
-                    <div className='contador'>
-                    <Contador start={0} end={70} className={'contador-1'} ligar={false}/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
-                       Fusce est leo, venenatis at urna ut, gravida</p>
-                    </div>
-
-                    <div className='contador'>
-                    <Contador start={0} end={300} className={'contador-2'} ligar={false}/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
-                       Fusce est leo, venenatis at urna ut, gravida</p>
-                    </div>
-
-                    <div className='contador'>
-                    <Contador start={0} end={30} className={'contador-3'} ligar={false}/> 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br/> 
-                       Fusce est leo, venenatis at urna ut, gravida</p>
-                    </div>
-
-            </div>
-            </AnimacaoFadeInY>
-
-
-            <AnimacaoFadeInX direita={false}>
-            <div className="banner-sobre-2 banner-sobre">
-                <div className="foto-sobre">
-                    <img src={historiaFoto}/>
-                </div>
-                <div className="texto-sobre">
-                    <h1>História</h1>
-                    <p className="texto-principal-banner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est leo, venenatis at urna ut, gravida tincidu
-                        nt ligula. Nullam eget justo at lorem pulvinar vestibulum quis non diam. Duis magna dui, tempus ut nisl et, 
-                        molestie pulvinar libero. Aenean vel venenatis lorem. Mauris at scelerisque ligula. Nam accumsan est nulla, 
-                        in lobortis eros porttitor a. Aenean commodo vehicula scelerisque. Aliquam hendrerit tortor at ornare faucib
-                        us. Nullam ornare, augue vel tincidunt posuere, metus purus elementum nunc, sed venenatis metus sapien sit 
-                        amet dui. Ut eget sapien eu turpis euismod tempus. Donec ac diam lorem. Mauris nec faucibus mi. Nullam ornar
-                        e efficitur elit non sagittis. Nunc tristique congue nunc sed tincidunt.</p>
-                </div>
-            </div>
-            </AnimacaoFadeInX>
-
-            <AnimacaoFadeInX direita={true}>
-            <div className="banner-sobre-3 banner-sobre">
-                <div className="texto-sobre">
-                    <h1>Fundador</h1>
-                    <p className="texto-principal-banner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est leo, venenatis at urna ut, gravida tincidu
-                        nt ligula. Nullam eget justo at lorem pulvinar vestibulum quis non diam. Duis magna dui, tempus ut nisl et, 
-                        molestie pulvinar libero. Aenean vel venenatis lorem. Mauris at scelerisque ligula. Nam accumsan est nulla, 
-                        in lobortis eros porttitor a. Aenean commodo vehicula scelerisque. Aliquam hendrerit tortor at ornare faucib
-                        us. Nullam ornare, augue vel tincidunt posuere, metus purus elementum nunc, sed venenatis metus sapien sit 
-                        amet dui. Ut eget sapien eu turpis euismod tempus. Donec ac diam lorem. Mauris nec faucibus mi. Nullam ornar
-                        e efficitur elit non sagittis. Nunc tristique congue nunc sed tincidunt.</p>
-                </div>
-                <div className="foto-sobre">
-                    <img src={criadorFoto}/>
-                </div>
-            </div>
-            </AnimacaoFadeInX>
-        </div>
-    )
-}
-
-function AnimacaoFadeInX({direita, children}){
-    
-    const ref = useRef(null);
-    const view = useInView(ref, {once: true});
-    const lado = direita ? 'translateX(-200px)' : 'translateX(200px)' ;
-    
-    return(
-        <div ref={ref}>
-            <motion.div>
-                <span style={{
-                    transform: view ?  "none" : lado,
-                    opacity: view ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-                  }}>
-                    {children}
-                </span>
+            <motion.div whileTap={{cursor: 'grabbing'}} className='slider'>
+                    <motion.div className='inner-slider'
+                    ref={innerSlide}
+                    drag='x'
+                    dragConstraints={{right: 0, left: -width}}
+                    >
+                        {cards.map((item, index) => (
+                            <Card key={index} foto={item.foto} titulo={item.titulo} textoSlide={item.texto} ano={item.ano} mes={item.mes}/>
+                        ))}
+                    </motion.div>
             </motion.div>
-        </div>
-    );
+        
+    </div>
+  )
 }
 
-function AnimacaoFadeInY({baixo, children}){
-    
-    const ref = useRef(null);
-    const view = useInView(ref, {once: true});
-    const lado = baixo ? 'translateY(-200px)' : 'translateY(200px)' ;
-    
-    return(
-        <div ref={ref}>
-            <motion.div>
-                <span style={{
-                    transform: view ?  "none" : lado,
-                    opacity: view ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-                  }}>
-                    {children}
-                </span>
-            </motion.div>
-        </div>
-    );
-}
+function Card(props){
 
+  return(
+    <motion.div className='slide-sobre'
+    initial={{opacity: 0.5}}
+    whileInView={{opacity: 1}}
+    transition={{duration: 1}}
+    viewport={{margin: '0px -500px 0px -500px'}}
+    >
+        <div className='imagem-slide'>
+            <img src={props.foto}/>
+        </div>
+        <div className='texto-slide'>
+            <h6>{props.titulo}</h6>
+            <p>{props.textoSlide}</p>
+        </div>
+
+            <motion.h6 className='mes-acontecimento-contato'
+            initial={{opacity: 0, y: 70, x: 100}}
+            whileInView={{y: 0, x: 0, opacity: 1}}
+            viewport={{margin: '0px -750px 0px 0px'}}
+            >
+                {props.mes}
+            </motion.h6>
+
+            <motion.h6 className='ano-acontecimento-contato'
+            initial={{opacity: 0, y: -70, x: -100}}
+            whileInView={{y: 0, x: 0, opacity: 1}}
+            viewport={{margin: '0px 0px 0px -225px'}}
+            transition={{delay: 0.3}}
+            >
+                {props.ano}
+            </motion.h6>
+    </motion.div>
+  )
+}

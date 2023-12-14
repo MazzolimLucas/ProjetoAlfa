@@ -130,78 +130,7 @@ a{
     background-color: black;
     color: white;
     position: relative;
-    bottom: 0px;
-    margin-top: 50px;
-    height: 350px;
-}
-
-ul li{
-    list-style: none;
-    margin-top: 14px;
-    color: white;
-}
-
-.information-footer li a{
-    color: rgb(123, 119, 119);
-    font-size: 0.8em;
-}
-
-.information-footer{
-    display: flex;
-    gap: 65px;
-    width: 60%;
-    height: 100%;
-}
-
-.information-footer ul{
-    margin-top: 40px;
-    margin-left: 20px;
-}
-
-.footer-topic{
-    font-size: 1.2em;
-}
-
-.menssage-footer{
-    height: 100%;
-    width: 40%;
-}
-
-.menssage-footer div{
-    margin-left: 80px;
-    margin-top: 50px;
-}
-
-.input-email-footer{
-    height: 35px;
-    width: 300px;
-    border: none;
-    padding: 0;
-    background-color: rgb(202, 198, 198);
-    outline: none;
-    text-indent: 10px;
-}
-
-.input-email-footer:focus::placeholder {
-    color: transparent;
-}
-
-.input-email-footer:focus{
-    text-indent: 10px;
-}
-
-
-.menssage-footer button{
-    height: 35px;
-    border: none;
-    padding: none;
-    background-color: rgb(203, 102, 66);
-    cursor: pointer;
-}
-
-.menssage-footer button:active{
-    background-color: rgb(177, 81, 46);
-    height: 36px;
+    margin-top: 100px;
 }
 
 /* Button */

@@ -32,9 +32,9 @@ export default function Header(){
     return(
         <div className="Header">
             <div className="sup-header">
-                <Link to="/"><p>DB Storm</p></Link>
+                <Link to="/" onClick={setClassHome}><p>DB Storm</p></Link>
                 <p className="white-space"></p>
-                <p><Link to='/Login e cadastro' className="carrinho-link">Carrinho: </Link> 0 item(s)</p>
+                <p><Link to='/' className="carrinho-link" onClick={setClassHome}>Carrinho: </Link> 0 item(s)</p>
             </div>
             <div className="bottom-header">
                 <div className="rotas-header">

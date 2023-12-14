@@ -3,7 +3,7 @@ import Button from '../../Assents/Button';
 import './Contato.css'
 
 
-export default function Index(){
+export default function Index(){    
 
     const [colorSelect, setColorSelect] = useState('input-opcoes-contato');
 
